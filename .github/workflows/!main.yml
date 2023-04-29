@@ -25,6 +25,7 @@ jobs:
 
     - name: Step-4 Run Prettier
       run: npx prettier --check "**/*.{html,css,js}"
+      run: npx run prettier --write -y
 
     - name: Step-5 Run htmlhint
       run: npx htmlhint "**/*.html"
