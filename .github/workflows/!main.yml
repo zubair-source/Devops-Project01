@@ -1,0 +1,29 @@
+name: Project CICD
+
+on:
+ push:
+  branch:
+  -main
+  pull_request:
+   branch:
+   -main
+Jobs:
+ Testing:
+   runs-on: ubuntu-latest
+   steps:
+    -name: Step-1 Checkout-respository to ubuntu runner
+    uses: action/checkout@v3
+    -name: Step-2 install Nodes.js
+    - uses: actions/setup-node@v3
+    with:
+     node-version: 16
+     - run: npm ci
+     - run: npm test
+    -name: Step_3 Install dependies
+     run: npm install
+    -name: Step-4 Run Prettier
+     run: npx prettier --check "**/*.{html,css,js}"
+    -name: Step-5 Run htmlhint
+     run: npx htmlhint "**/*.html"
+      
+
