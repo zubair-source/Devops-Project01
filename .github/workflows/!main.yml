@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - name: Step-1 Checkout-respository to ubuntu runner
-      uses: action/checkout@v3
+      uses: actions/checkout@v3
 
     - name: Step-2 install Nodes.js
       uses: actions/setup-node@v3
