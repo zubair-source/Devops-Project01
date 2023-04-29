@@ -18,11 +18,10 @@ jobs:
     - name: Step-2 install Nodes.js
       uses: actions/setup-node@v3
       with:
-        node-version: 16
-    - run: npm ci
+        node-version: 18.16.0
 
-    - name: Step_3 Install dependies
-      run: npm install
+    - name: Step-3 Install dependies
+      run: npm ci
 
     - name: Step-4 Run Prettier
       run: npx prettier --check "**/*.{html,css,js}"
